@@ -42,3 +42,7 @@ Planned stack: Next.js, Postgres, Google Cloud (Cloud Run, Cloud SQL, IAP), Clau
 ## A note on client data
 
 The real version will hold taxpayer data, which falls under the FTC Safeguards Rule and IRS Publication 4557. Never put real client data into this demo, its tests, or its fixtures.
+
+## License
+
+MIT, see [LICENSE](LICENSE). Free to use, copy and modify. Provided as is, with no warranty: if you run it for a real firm, the security and compliance work is yours.
