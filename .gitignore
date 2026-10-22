@@ -1,0 +1,17 @@
+# dependencies and build output
+node_modules/
+.next/
+out/
+build/
+coverage/
+*.tsbuildinfo
+
+# secrets and local env files (never commit real values)
+.env
+.env.*
+!.env.example
+*.pem
+
+# OS and editor
+.DS_Store
+Thumbs.db

@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Demo token sheet. Placeholder until the prospect's brand system is supplied. */
+@theme {
+  --color-canvas: #f6f5f2;
+  --color-surface: #ffffff;
+  --color-sunken: #efeee9;
+  --color-line: #e3e1db;
+  --color-line-strong: #cfccc4;
+  --color-ink: #1b1b19;
+  --color-ink-2: #55534d;
+  --color-ink-3: #85827a;
+  --color-brand: #1f4d45;
+  --color-brand-hover: #173b35;
+  --color-brand-soft: #e6efec;
+  --color-warn: #8a5300;
+  --color-warn-soft: #fbf0dc;
+  --color-danger: #a8261b;
+  --color-danger-soft: #fbe9e7;
+  --color-ok: #1d6a3a;
+  --color-ok-soft: #e4f2e9;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --ease-out-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+@layer components {
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem;
+  min-height: 2.25rem; padding: 0 0.875rem; border-radius: 0.5rem;
+  font-size: 0.8125rem; font-weight: 500; border: 1px solid var(--color-line-strong);
+  background: var(--color-surface); color: var(--color-ink);
+  transition: background-color 150ms var(--ease-out-soft), transform 120ms var(--ease-out-soft), border-color 150ms;
+}
+@media (hover: hover) { .btn:hover { background: var(--color-sunken); } }
+.btn:active { transform: scale(0.98); }
+.btn:focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+.btn-primary { background: var(--color-brand); border-color: var(--color-brand); color: #fff; }
+@media (hover: hover) { .btn-primary:hover { background: var(--color-brand-hover); } }
+.btn-danger { color: var(--color-danger); }
+@media (hover: hover) { .btn-danger:hover { background: var(--color-danger-soft); } }
+
+.card { background: var(--color-surface); border: 1px solid var(--color-line); border-radius: 0.75rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
+}
